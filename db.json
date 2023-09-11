@@ -1,0 +1,22 @@
+{
+  "actividades": [
+    {
+      "nombre": "Restablecimiento de la conexion a internet",
+      "responsable": "Eduardo Besembel",
+      "entidad": "Gestion humana",
+       "id": 7
+    },
+    {
+      "nombre": "Revision y repacion de pc",
+      "responsable": "Gilbert Gonzalez",
+      "entidad": "Operaciones",
+      "id": 9
+    },
+    {
+      "nombre": "Revision de equipos de computo despachadores",
+      "responsable": "Jonathan Briceño",
+      "entidad": "Operaciones",
+      "id": 4
+    }
+  ]
+}
