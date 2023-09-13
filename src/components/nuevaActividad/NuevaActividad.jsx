@@ -1,7 +1,34 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+ 
+//redux actions 
+import { crearNuevaActividad } from '../../actions/actividadActions'
 
 
-const nuevaActividad = ()=>{
+const nuevaActividad = () => {
+
+    const dispatch = useDispatch();
+
+    //llamando el action de actividadActividad
+    const agregarActividad = () => dispatch( crearNuevaActividad() );
+
+    //submit de actividades
+    const submitNueavaActividad = (e) =>{
+        e.preventDefault();
+
+        //validando formulario
+
+
+        //comprobando errores
+        
+
+        //crear nueva actividad
+        agregarActividad();
+    }
+
+
+
+
     return(
         <div className="row justify-content-center mt-4">
             <div className="col-md-8">
@@ -11,7 +38,9 @@ const nuevaActividad = ()=>{
                             Agregar Nueva Actividad
                         </h2>
 
-                        <form>
+                        <form
+                            onSubmit={submitNueavaActividad}
+                        >
                             <div className="form-group">
                                 <label>Nueva Actividad</label>
                                 <input
