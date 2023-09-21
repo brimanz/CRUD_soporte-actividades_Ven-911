@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
  
 //redux actions 
@@ -7,23 +7,36 @@ import { crearNuevaActividad } from '../../actions/actividadActions'
 
 const nuevaActividad = () => {
 
+    //state local
+    const [nombre, setNombre] = useState("");
+    const [responsable, setResponsable] = useState("");
+    const [entidad, setEntidad] = useState("");
+
+
+    //usando dispatch
     const dispatch = useDispatch();
 
     //llamando el action de actividadActividad
-    const agregarActividad = () => dispatch( crearNuevaActividad() );
+    const agregarActividad = actividad => dispatch( crearNuevaActividad( actividad ) );
 
     //submit de actividades
     const submitNueavaActividad = (e) =>{
         e.preventDefault();
 
         //validando formulario
-
+        if(nombre.trim() === "", responsable.trim() === "", entidad.trim() === ""){
+            return;
+        }
 
         //comprobando errores
         
 
         //crear nueva actividad
-        agregarActividad();
+        agregarActividad({
+            nombre,
+            responsable,
+            entidad
+        });
     }
 
 
@@ -46,8 +59,9 @@ const nuevaActividad = () => {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Agrega una actividad"
                                     name="nombre"
+                                    value="nombre"
+                                    onChange={e => setNombre(e.target.value)}
                                 />
                             </div>
 
@@ -56,8 +70,9 @@ const nuevaActividad = () => {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Indique el Responsable"
                                     name="responsable"
+                                    value="responsable"
+                                    onChange={e => setResponsable(e.target.value)}
                                 />
                             </div>
 
@@ -66,15 +81,15 @@ const nuevaActividad = () => {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Indique la Entidad o Coordinacion"
                                     name="entidad"
+                                    value="entidad"
+                                    onChange={e => setEntidad(e.target.value)}
                                 />
                             </div>
 
                             <button
                                 type="submit"
                                 className="btn btn-primary font-weight-bold text-uppercase"
-
                             >
                                 Agregar
                             </button>

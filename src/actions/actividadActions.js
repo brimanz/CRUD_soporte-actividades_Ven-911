@@ -7,9 +7,9 @@ import {
 
 
 //crear nuevas actividades
-export function crearNuevaActividad() {
+export function crearNuevaActividad( actividad ) {
 	return() => {
-		console.log("funcionando desde actividades action")
+		console.log(actividad);
 	}
 
 } 
