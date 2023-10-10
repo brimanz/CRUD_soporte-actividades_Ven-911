@@ -60,7 +60,7 @@ const nuevaActividad = () => {
                                     type="text"
                                     className="form-control"
                                     name="nombre"
-                                    value="nombre"
+                                    value={nombre}
                                     onChange={e => setNombre(e.target.value)}
                                 />
                             </div>
@@ -71,7 +71,7 @@ const nuevaActividad = () => {
                                     type="text"
                                     className="form-control"
                                     name="responsable"
-                                    value="responsable"
+                                    value={responsable}
                                     onChange={e => setResponsable(e.target.value)}
                                 />
                             </div>
@@ -82,7 +82,7 @@ const nuevaActividad = () => {
                                     type="text"
                                     className="form-control"
                                     name="entidad"
-                                    value="entidad"
+                                    value={entidad}
                                     onChange={e => setEntidad(e.target.value)}
                                 />
                             </div>
