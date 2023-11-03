@@ -4,16 +4,22 @@ import {
 	AGREGAR_ACTIVIDAD_ERROR
 } from '../types'
 
+import clienteAxios from '../config/axios'
 
 
 //crear nuevas actividades
 export function crearNuevaActividad( actividad ) {
-	return(dispatch) => {
+	return async (dispatch) => {
 		dispatch( agregarActividad() );
 
 		try{
+			await clienteAxios.post('/actividades', actividad);
+
+			//state update
 			dispatch( agregarActividadExito(actividad) );
 		}catch(error){
+			console.log(error);
+			//adding  error message
 			dispatch( agregarActividadError(true) );
 		}
 	}

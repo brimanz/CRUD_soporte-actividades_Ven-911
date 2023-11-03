@@ -4,7 +4,7 @@
       "nombre": "Restablecimiento de la conexion a internet",
       "responsable": "Eduardo Besembel",
       "entidad": "Gestion humana",
-       "id": 7
+      "id": 7
     },
     {
       "nombre": "Revision y repacion de pc",
@@ -17,6 +17,18 @@
       "responsable": "Jonathan Briceño",
       "entidad": "Operaciones",
       "id": 4
+    },
+    {
+      "nombre": "soporte consola 3",
+      "responsable": "jonathan briceño",
+      "entidad": "operaciones",
+      "id": 10
+    },
+    {
+      "nombre": "soporte consola 5",
+      "responsable": "jonathan briceño",
+      "entidad": "operaciones",
+      "id": 11
     }
   ]
 }
