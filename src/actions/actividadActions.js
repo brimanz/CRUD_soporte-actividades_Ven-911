@@ -38,9 +38,10 @@ const agregarActividadExito = actividad => ({
 })
 
 //si se presenta un error
-const agregarActividadError = () =>{
-
-}
+const agregarActividadError = estado => ({
+	type: AGREGAR_ACTIVIDAD_ERROR, 
+	payload: estado
+})
 
 
 

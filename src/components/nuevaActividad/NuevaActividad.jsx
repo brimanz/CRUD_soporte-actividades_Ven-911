@@ -16,6 +16,11 @@ const nuevaActividad = () => {
     //usando dispatch
     const dispatch = useDispatch();
 
+    //accediendo al state del store
+    const cargando = useSelector( state => state.actividades.loading );
+    const error = useSelector( state => state.actividades.error );
+
+
     //llamando el action de actividadActividad
     const agregarActividad = actividad => dispatch( crearNuevaActividad( actividad ) );
 
@@ -93,7 +98,10 @@ const nuevaActividad = () => {
                             >
                                 Agregar
                             </button>
-                        </form>                    
+                        </form>
+
+                        { cargando ? <p>Cargando...</p> : null }
+                        { error ? <p className="alert alert-danger p2 mt-4 text-center">Hay un Error</p> : null }                    
                     </div>
                 </div>            
             </div>
