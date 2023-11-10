@@ -29,6 +29,24 @@
       "responsable": "jonathan briceño",
       "entidad": "operaciones",
       "id": 12
+    },
+    {
+      "nombre": "soporte consola 2",
+      "responsable": "jonathan briceño",
+      "entidad": "cupaz",
+      "id": 13
+    },
+    {
+      "nombre": "soporte consola 1",
+      "responsable": "Eduardo Besembel",
+      "entidad": "cupaz",
+      "id": 14
+    },
+    {
+      "nombre": "soporte consola 1",
+      "responsable": "Eduardo Besembel",
+      "entidad": "cupaz",
+      "id": 15
     }
   ]
 }

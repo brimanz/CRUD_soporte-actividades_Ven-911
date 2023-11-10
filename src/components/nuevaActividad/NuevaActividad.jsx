@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { crearNuevaActividad } from '../../actions/actividadActions'
 
 
-const nuevaActividad = () => {
+const nuevaActividad = ({ history }) => {
 
     //state local
     const [nombre, setNombre] = useState("");
@@ -42,6 +42,10 @@ const nuevaActividad = () => {
             responsable,
             entidad
         });
+
+
+        //redireccionando
+        history.push('/');
     }
 
 

@@ -5,6 +5,7 @@ import {
 } from '../types'
 
 import clienteAxios from '../config/axios'
+import Swal from 'sweetalert2'
 
 
 //crear nuevas actividades
@@ -17,10 +18,25 @@ export function crearNuevaActividad( actividad ) {
 
 			//state update
 			dispatch( agregarActividadExito(actividad) );
+
+
+			//alert
+			Swal.fire({
+			  title: "Buen Trabajo!",
+			  text: "Actividad Guardada con Exito!",
+			  icon: "success"
+			});
 		}catch(error){
 			console.log(error);
 			//adding  error message
 			dispatch( agregarActividadError(true) );
+
+			//error alert
+			Swal.fire({
+			  title: "Lo siento!",
+			  text: "Ocurrió un Error!",
+			  icon: "error"
+			});
 		}
 	}
 } 
