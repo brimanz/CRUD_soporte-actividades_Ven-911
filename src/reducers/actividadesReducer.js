@@ -1,7 +1,10 @@
 import {
 	AGREGAR_ACTIVIDAD,
 	AGREGAR_ACTIVIDAD_EXITO,
-	AGREGAR_ACTIVIDAD_ERROR
+	AGREGAR_ACTIVIDAD_ERROR,
+	COMENZAR_DESCARGA_ACTIVIDADES,
+	DESCARGA_ACTIVIDADES_EXITO,
+	DESCARGA_ACTIVIDADES_ERROR
 } from '../types'
 
 //state propio por cada reducer
@@ -14,6 +17,7 @@ const initialState = {
 
 export default function(state = initialState, action){
 	switch(action.type){
+		case COMENZAR_DESCARGA_ACTIVIDADES:			
 		case AGREGAR_ACTIVIDAD: 
 			return {
 				...state, 
@@ -31,7 +35,7 @@ export default function(state = initialState, action){
 				loading: false, 
 				error: action.payload 
 			}
-
+		
 		default:
 			return state;
 	}

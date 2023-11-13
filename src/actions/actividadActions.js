@@ -1,7 +1,11 @@
 import {
 	AGREGAR_ACTIVIDAD,
 	AGREGAR_ACTIVIDAD_EXITO,
-	AGREGAR_ACTIVIDAD_ERROR
+	AGREGAR_ACTIVIDAD_ERROR,
+	
+	COMENZAR_DESCARGA_ACTIVIDADES,
+	DESCARGA_ACTIVIDADES_EXITO,
+	DESCARGA_ACTIVIDADES_ERROR
 } from '../types'
 
 import clienteAxios from '../config/axios'
@@ -60,6 +64,16 @@ const agregarActividadError = estado => ({
 })
 
 
+//descarga actividades de la BD
+export function obtenerAactividadesAction(){
+	return async( dispatch ) => {
+		dispatch( descargarActividades() );
+	}
+}
 
+const descargarActividades = () =>({
+	type: COMENZAR_DESCARGA_ACTIVIDADES,
+	payload: true
+})
 
 
