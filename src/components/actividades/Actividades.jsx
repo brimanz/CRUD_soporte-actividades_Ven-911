@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+//redux
+import { useSelector, useDispatch } from 'react-redux'
+import { obtenerActividadesAction } from '../../actions/actividadActions'
 
 
 const Actividades = ()=>{
+
+    const dispatch = useDispatch();
+
+    useEffect( () => {
+        //lamada a la API
+        const cargarActividades = () => dispatch( obtenerActividadesAction() );
+        cargarActividades();
+
+    }, [])
+
+
     return(
         <>
             <h2 className="text-center my-3">Listado de Actividades</h2>

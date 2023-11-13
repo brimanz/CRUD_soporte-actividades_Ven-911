@@ -65,7 +65,7 @@ const agregarActividadError = estado => ({
 
 
 //descarga actividades de la BD
-export function obtenerAactividadesAction(){
+export function obtenerActividadesAction(){
 	return async( dispatch ) => {
 		dispatch( descargarActividades() );
 	}
