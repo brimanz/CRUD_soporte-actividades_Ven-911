@@ -68,11 +68,30 @@ const agregarActividadError = estado => ({
 export function obtenerActividadesAction(){
 	return async( dispatch ) => {
 		dispatch( descargarActividades() );
+
+		try{
+			const response = await clienteAxios.get('/actividades');
+			dispatch( descargarActividadesExitosa( response.data ) )
+		} catch(error) {
+			dispatch( descargarActividadesError() )
+		}
+
 	}
 }
 
+
 const descargarActividades = () =>({
 	type: COMENZAR_DESCARGA_ACTIVIDADES,
+	payload: true
+}); 
+
+const descargarActividadesExitosa = actividades => ({
+	type: DESCARGA_ACTIVIDADES_EXITO,
+	payload: actividades
+});
+
+const descargarActividadesError = () => ({
+	type: AGREGAR_ACTIVIDAD_ERROR,
 	payload: true
 })
 

@@ -30,10 +30,18 @@ export default function(state = initialState, action){
 				actividades: [...state.actividades, action.payload]
 			}
 		case AGREGAR_ACTIVIDAD_ERROR:
+		case DESCARGA_ACTIVIDADES_ERROR:
 			return{
 				...state,
 				loading: false, 
 				error: action.payload 
+			}
+		case DESCARGA_ACTIVIDADES_EXITO:
+			return{
+				...state, 
+				loading: false,
+				error: null,
+				actividades: action.payload 
 			}
 		
 		default:
