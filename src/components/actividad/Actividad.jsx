@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Actividad = ({ actividad, id }) => {
 
 	const { nombre, responsable, entidad } = actividad

@@ -23,7 +23,6 @@ export function crearNuevaActividad( actividad ) {
 			//state update
 			dispatch( agregarActividadExito(actividad) );
 
-
 			//alert
 			Swal.fire({
 			  title: "Buen Trabajo!",
@@ -70,10 +69,12 @@ export function obtenerActividadesAction(){
 		dispatch( descargarActividades() );
 
 		try{
-			const response = await clienteAxios.get('/actividades');
-			dispatch( descargarActividadesExitosa( response.data ) )
+			setTimeout(async () => {
+				const response = await clienteAxios.get('/actividades');
+				dispatch( descargarActividadesExitosa( response.data ) );	
+			}, 1000)
 		} catch(error) {
-			dispatch( descargarActividadesError() )
+			dispatch( descargarActividadesError() );
 		}
 
 	}

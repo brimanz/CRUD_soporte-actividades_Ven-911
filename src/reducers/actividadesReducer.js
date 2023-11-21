@@ -11,7 +11,8 @@ import {
 const initialState = {
 	actividades: [],
 	error: null, 
-	loading: false
+	loading: false,
+	actividadeliminar: null
 }
 
 

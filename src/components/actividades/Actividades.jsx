@@ -19,12 +19,25 @@ const Actividades = ()=> {
 
     }, []); 
 
-    const actividades = useSelector( state => state.actividades.actividades )
-    console.log( actividades )
+    //obteniendo datos del state
+    const actividades = useSelector( state => state.actividades.actividades );
+    const error = useSelector( state => state.actividades.error );
+    const cargando = useSelector( state => state.actividades.loading );
 
     return(
         <>
             <h2 className="text-center my-3">Listado de Actividades</h2>
+            { 
+                error 
+                    ? <p className="font-weight-bold alert alert-danger text-center mt-4">Ocurrió un Error</p> 
+                    : null
+            }  
+
+            {
+                cargando ? <p className="text-center">Cargando...</p>
+                : null 
+            }     
+
 
             <table className="table table-striped">
                 <thead className="bg-primary table-dark">
